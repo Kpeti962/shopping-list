@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/5dc57418de.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <h1>Shopping list</h1>
+      <div class="input">
+        <input type="text" class="input input-text" />
+        <input type="number" class="quantityinput" />
+        <select name="" id="selectInput">
+          <option value="default">Válassz</option>
+          <option value="csomag">csomag</option>
+          <option value="db">db</option>
+          <option value="kg">kg</option>
+          <option value="dkg">dkg</option>
+          <option value="g">g</option>
+          <option value="l">l</option>
+        </select>
+        <button class="btn">Felvétel</button>
+        <i class="fa-solid fa-circle-small"></i>
+        <i class="fa-solid fa-circle-small"></i>
+        <i class="fa-solid fa-circle-small"></i>
+      </div>
+      <div class="list">
+        <ul id="list"></ul>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
