@@ -8,13 +8,18 @@ const inputquantity = document.querySelector(".quantityinput");
 btnInput.addEventListener("click", function () {
   const food = document.querySelector(".input-text");
   const qtity = document.querySelector(".quantityinput");
+  const unit = document.getElementById("selectInput");
   const list = document.getElementById("list");
   const entry = document.createElement("li");
   entry.setAttribute("contenteditable", true);
+  const egyseg = document.createElement("li")
   const delet = document.createElement("button");
-  const quantity = document.createElement("li");
+  
+  
   delet.style.display = "list-item";
   entry.style.display = "list-item";
+  
+  
   const containerDiv = document.createElement("div");
   containerDiv.classList.add("container-div");
   delet.innerText = "Törlés";
@@ -30,10 +35,10 @@ btnInput.addEventListener("click", function () {
     if (food.value !== "") {
       isFoodValid = true;
     }
-    /*    if(qtity.value !== "" || qtity.value >= 0){
-      isQuantityValid=true;
-    } */
-    return isQuantityValid && isFoodValid;
+        if(unit.value !== "default"){
+      isUnitValid = true;
+    } 
+    return isQuantityValid && isFoodValid && isUnitValid
   };
 
   if (!inputsAreValid()) {
@@ -46,6 +51,9 @@ btnInput.addEventListener("click", function () {
       if (isFoodValid === false) {
         alert("Élelmiszer megadása kötelező");
       }
+       if (isUnitValid === false) {
+         alert("Egység megadása kötelező")
+       }
     }
   } else {
     const icon = document.createElement("i");
@@ -54,13 +62,17 @@ btnInput.addEventListener("click", function () {
 
     entry.appendChild(icon);
     entry.appendChild(
-      document.createTextNode(`${food.value} ${qtity.value} db`)
+      document.createTextNode(`${food.value} ${qtity.value} ${unit.value}`)
     );
 
     food.value = "";
     qtity.value = "";
+    unit.value = "default";
+    
     containerDiv.appendChild(entry);
     containerDiv.appendChild(delet);
+    containerDiv.appendChild(egyseg);
+
     list.appendChild(containerDiv);
   }
 

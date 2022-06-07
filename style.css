@@ -71,6 +71,8 @@ h1 {
   display: list-item;
   justify-content: center;
   align-items: center;
+  
+  
 }
 .list {
   background-color: rgb(100, 105, 169);
@@ -96,7 +98,8 @@ li:hover {
   justify-content: space-between;
   align-items: center;
   margin: 8px;
-  width: 300px;
+  width: 450px;
+
 }
 .icon {
   margin: 0 5px;
